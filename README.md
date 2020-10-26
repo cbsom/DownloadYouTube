@@ -1,2 +1,3 @@
 # DownloadYouTube
-Download YouTube videos using youtube-dl
+A .net core Winodw desktop application for downloading YouTube videos.
+Uses youtube-dl
