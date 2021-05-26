@@ -42,9 +42,10 @@ namespace DownloadYouTube
             // 
             this.cbAudioOnly.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbAudioOnly.AutoSize = true;
-            this.cbAudioOnly.Location = new System.Drawing.Point(701, 32);
+            this.cbAudioOnly.Location = new System.Drawing.Point(853, 13);
+            this.cbAudioOnly.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbAudioOnly.Name = "cbAudioOnly";
-            this.cbAudioOnly.Size = new System.Drawing.Size(84, 19);
+            this.cbAudioOnly.Size = new System.Drawing.Size(84, 24);
             this.cbAudioOnly.TabIndex = 0;
             this.cbAudioOnly.Text = "Audio only";
             this.cbAudioOnly.UseVisualStyleBackColor = true;
@@ -52,9 +53,9 @@ namespace DownloadYouTube
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 38);
+            this.label1.Location = new System.Drawing.Point(25, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 15);
+            this.label1.Size = new System.Drawing.Size(34, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "URL";
             // 
@@ -62,28 +63,31 @@ namespace DownloadYouTube
             // 
             this.txtUrl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUrl.Location = new System.Drawing.Point(25, 57);
+            this.txtUrl.Location = new System.Drawing.Point(25, 39);
+            this.txtUrl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUrl.Name = "txtUrl";
-            this.txtUrl.Size = new System.Drawing.Size(760, 23);
+            this.txtUrl.Size = new System.Drawing.Size(912, 25);
             this.txtUrl.TabIndex = 2;
             // 
             // btnGo
             // 
             this.btnGo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGo.Location = new System.Drawing.Point(710, 143);
+            this.btnGo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGo.Location = new System.Drawing.Point(800, 98);
+            this.btnGo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(75, 27);
+            this.btnGo.Size = new System.Drawing.Size(137, 36);
             this.btnGo.TabIndex = 3;
-            this.btnGo.Text = "Download";
+            this.btnGo.Text = "Start Download";
             this.btnGo.UseVisualStyleBackColor = true;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 86);
+            this.label2.Location = new System.Drawing.Point(25, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 15);
+            this.label2.Size = new System.Drawing.Size(49, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Save In";
             // 
@@ -91,9 +95,10 @@ namespace DownloadYouTube
             // 
             this.txtSaveIn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSaveIn.Location = new System.Drawing.Point(25, 105);
+            this.txtSaveIn.Location = new System.Drawing.Point(25, 103);
+            this.txtSaveIn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSaveIn.Name = "txtSaveIn";
-            this.txtSaveIn.Size = new System.Drawing.Size(760, 23);
+            this.txtSaveIn.Size = new System.Drawing.Size(639, 25);
             this.txtSaveIn.TabIndex = 2;
             // 
             // listView1
@@ -104,18 +109,20 @@ namespace DownloadYouTube
             this.listView1.BackColor = System.Drawing.Color.Black;
             this.listView1.ForeColor = System.Drawing.Color.White;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(29, 186);
+            this.listView1.Location = new System.Drawing.Point(25, 159);
+            this.listView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(760, 252);
+            this.listView1.Size = new System.Drawing.Size(916, 435);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(966, 607);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnGo);
             this.Controls.Add(this.txtSaveIn);
@@ -123,8 +130,10 @@ namespace DownloadYouTube
             this.Controls.Add(this.txtUrl);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbAudioOnly);
+            this.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Download YT";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
