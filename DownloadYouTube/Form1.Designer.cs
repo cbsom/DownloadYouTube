@@ -42,6 +42,7 @@ namespace DownloadYouTube
             // 
             this.cbAudioOnly.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbAudioOnly.AutoSize = true;
+            this.cbAudioOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cbAudioOnly.Location = new System.Drawing.Point(853, 13);
             this.cbAudioOnly.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbAudioOnly.Name = "cbAudioOnly";
@@ -63,23 +64,27 @@ namespace DownloadYouTube
             // 
             this.txtUrl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUrl.BackColor = System.Drawing.Color.AliceBlue;
+            this.txtUrl.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtUrl.ForeColor = System.Drawing.Color.RoyalBlue;
             this.txtUrl.Location = new System.Drawing.Point(25, 39);
             this.txtUrl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUrl.Name = "txtUrl";
-            this.txtUrl.Size = new System.Drawing.Size(912, 25);
+            this.txtUrl.Size = new System.Drawing.Size(912, 23);
             this.txtUrl.TabIndex = 2;
             // 
             // btnGo
             // 
             this.btnGo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGo.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnGo.ForeColor = System.Drawing.Color.RoyalBlue;
             this.btnGo.Location = new System.Drawing.Point(800, 98);
             this.btnGo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(137, 36);
             this.btnGo.TabIndex = 3;
             this.btnGo.Text = "Start Download";
-            this.btnGo.UseVisualStyleBackColor = true;
+            this.btnGo.UseVisualStyleBackColor = false;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
             // label2
@@ -95,6 +100,8 @@ namespace DownloadYouTube
             // 
             this.txtSaveIn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSaveIn.BackColor = System.Drawing.Color.AliceBlue;
+            this.txtSaveIn.ForeColor = System.Drawing.Color.SlateGray;
             this.txtSaveIn.Location = new System.Drawing.Point(25, 103);
             this.txtSaveIn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSaveIn.Name = "txtSaveIn";
@@ -107,6 +114,7 @@ namespace DownloadYouTube
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.BackColor = System.Drawing.Color.Black;
+            this.listView1.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listView1.ForeColor = System.Drawing.Color.White;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(25, 159);

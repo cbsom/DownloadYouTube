@@ -31,7 +31,7 @@ namespace DownloadYouTube
                 this.ShowOutput("THE DOWNLOAD PROCESS HAS BEEN STOPPED.",
                     Color.OrangeRed);
                 this.btnGo.Text = "Download";
-                this.btnGo.ForeColor = this.ForeColor;
+                this.btnGo.ForeColor = Color.SteelBlue;
             }
             else
             {
@@ -64,7 +64,7 @@ namespace DownloadYouTube
             _downloadingProcess.StartInfo.RedirectStandardError = true;
             _downloadingProcess.OutputDataReceived += delegate (object sender, DataReceivedEventArgs e)
             {
-                this.Invoke(new Action(() => this.ShowOutput(e.Data, Color.LightBlue)));
+                this.Invoke(new Action(() => this.ShowOutput(e.Data, Color.LimeGreen)));
             };
             _downloadingProcess.ErrorDataReceived += delegate (object sender, DataReceivedEventArgs e)
             {
@@ -77,7 +77,7 @@ namespace DownloadYouTube
                     this.Invoke(new Action(() =>
                     {
                         this.btnGo.Text = "Download";
-                        this.btnGo.ForeColor = this.ForeColor;
+                        this.btnGo.ForeColor = Color.SteelBlue;
                         if (_downloadingProcess.ExitCode == 0)
                         {
                             this.CopyDownloadedFile();
