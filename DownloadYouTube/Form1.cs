@@ -8,6 +8,7 @@ namespace DownloadYouTube
 {
     public partial class Form1 : Form
     {
+        private const string _yt_dlp_FileName = "yt-dlp_x86.exe";
         private Process _downloadingProcess;
 
         public Form1()
@@ -46,7 +47,7 @@ namespace DownloadYouTube
         {
             _downloadingProcess = new Process
             {
-                StartInfo = { FileName = "yt-dlp_x86.exe" }
+                StartInfo = { FileName = _yt_dlp_FileName }
             };
             _downloadingProcess.StartInfo.ArgumentList.Add("--hls-prefer-ffmpeg");
             //_downloadingProcess.StartInfo.ArgumentList.Add("-r 10485760");
@@ -102,7 +103,7 @@ namespace DownloadYouTube
             //First we need the file name
             var p = new Process
             {
-                StartInfo = { FileName = "yt-dlp.exe" }
+                StartInfo = { FileName = _yt_dlp_FileName }
             };
             p.StartInfo.ArgumentList.Add("--get-filename");
             p.StartInfo.ArgumentList.Add(this.txtUrl.Text);
