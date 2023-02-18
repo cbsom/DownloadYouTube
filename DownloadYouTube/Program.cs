@@ -10,6 +10,7 @@ namespace DownloadYouTube
     {
         /// <summary>
         ///  The main entry point for the application.
+        ///  App depends on https://github.com/yt-dlp/yt-dlp/
         /// </summary>
         [STAThread]
         static void Main()

@@ -46,8 +46,12 @@ namespace DownloadYouTube
         {
             _downloadingProcess = new Process
             {
-                StartInfo = { FileName = "youtube-dl.exe" }
+                StartInfo = { FileName = "yt-dlp_x86.exe" }
             };
+            _downloadingProcess.StartInfo.ArgumentList.Add("--hls-prefer-ffmpeg");
+            //_downloadingProcess.StartInfo.ArgumentList.Add("-r 10485760");
+            //_downloadingProcess.StartInfo.ArgumentList.Add("--http-chunk-size 10M");
+
             if (this.cbAudioOnly.Checked)
             {
                 _downloadingProcess.StartInfo.ArgumentList.Add("-x");
@@ -98,7 +102,7 @@ namespace DownloadYouTube
             //First we need the file name
             var p = new Process
             {
-                StartInfo = { FileName = "youtube-dl.exe" }
+                StartInfo = { FileName = "yt-dlp.exe" }
             };
             p.StartInfo.ArgumentList.Add("--get-filename");
             p.StartInfo.ArgumentList.Add(this.txtUrl.Text);
