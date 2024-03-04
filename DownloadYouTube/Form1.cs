@@ -2,13 +2,14 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace DownloadYouTube
 {
     public partial class Form1 : Form
     {
-        private const string _yt_dlp_FileName = "yt-dlp_x86.exe";
+        protected const string _yt_dlp_FileName = "yt-dlp_x86.exe";
         private Process _downloadingProcess;
 
         public Form1()
@@ -19,6 +20,10 @@ namespace DownloadYouTube
         private void Form1_Load(object sender, EventArgs e)
         {
             this.txtSaveIn.Text = Properties.Settings.Default.SaveInPath;
+
+
+            FileVersionInfo myFileVersionInfo = FileVersionInfo.GetVersionInfo(_yt_dlp_FileName);
+            this.lblVersion.Text = $"Using {myFileVersionInfo.FileDescription} Version number: {myFileVersionInfo.FileVersion}";
         }
 
         private void btnGo_Click(object sender, EventArgs e)
@@ -49,7 +54,7 @@ namespace DownloadYouTube
             {
                 StartInfo = { FileName = _yt_dlp_FileName }
             };
-            _downloadingProcess.StartInfo.ArgumentList.Add("--hls-prefer-ffmpeg");
+            //_downloadingProcess.StartInfo.ArgumentList.Add("--hls-prefer-ffmpeg");
             //_downloadingProcess.StartInfo.ArgumentList.Add("-r 10485760");
             //_downloadingProcess.StartInfo.ArgumentList.Add("--http-chunk-size 10M");
 
@@ -207,6 +212,40 @@ namespace DownloadYouTube
             }
             tb.Text = data;
             this.listView1.Items[^1].EnsureVisible();
+        }
+
+        private void lblVersion_Click(object sender, EventArgs e)
+        {
+            var fileName = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), _yt_dlp_FileName);
+
+            using var p = new Process
+            {
+                StartInfo = {
+                    FileName = fileName,
+                    ArgumentList = { "-U" },
+                    UseShellExecute = false,
+                    CreateNoWindow = true,
+                    ErrorDialog = true }
+            };
+
+
+            p.StartInfo.RedirectStandardOutput = true;
+            p.StartInfo.RedirectStandardError = true;
+
+            p.OutputDataReceived += delegate (object sender, DataReceivedEventArgs e)
+            {
+                this.Invoke(new Action(() => this.ShowOutput(e.Data, Color.LimeGreen)));
+            };
+            p.ErrorDataReceived += delegate (object sender, DataReceivedEventArgs e)
+            {
+                this.Invoke(new Action(() => this.ShowOutput(e.Data, Color.Red)));
+            };
+
+            p.Start();
+            p.BeginOutputReadLine();
+            p.BeginErrorReadLine();
+            p.WaitForExit();
+            this.ShowOutput("The Update process has exited", Color.LightBlue);
         }
     }
 }
